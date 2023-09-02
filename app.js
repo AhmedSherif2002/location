@@ -36,6 +36,7 @@ id=0;
 counter=0;
 app.post("/postloc",(req,res,next)=>{
     data = req.body;
+    console.log(req.body);
     address=data["address"];
     if(!(data["address"] in ids)){
         id=++counter;
