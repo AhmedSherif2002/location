@@ -55,8 +55,8 @@ app.post("/postloc",(req,res,next)=>{
     next();
 },(req,res)=>{
     data = req.body;
-    loc = data.loc;
-    ids[address]["location"]=loc;
+    location = data.location;
+    ids[address]["location"]=location;
     console.log(data,"\nid:",id);
     console.log("ids:\n",ids);
     res.status(200).send(JSON.stringify(id));
