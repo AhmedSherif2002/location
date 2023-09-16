@@ -1,5 +1,6 @@
 const bodyParser = require("body-parser");
 const express = require("express")
+
 app=express();
 
 app.use(express.json());
@@ -70,6 +71,11 @@ app.get("/getinfo/",(req,res)=>{
     }else{
         res.send("No connections with a device with such MACAddress was found.","Id:",address);
     }
+})
+
+app.get("/requestInfo",(req,res)=>{
+    allDevices = JSON.stringify(ids);
+    res.send(allDevices);
 })
 
 setInterval(()=>{
