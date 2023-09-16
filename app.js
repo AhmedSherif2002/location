@@ -66,8 +66,7 @@ app.get("/getinfo/",(req,res)=>{
     data=req.body;
     address=req.query.address;
     if(ids[address]){
-        res.status(200).send(JSON.stringify(ids[address])+"\n\
-        Location: "+JSON.stringify(ids[address]["location"]));
+        res.status(200).send(JSON.stringify(ids[address]));
     }else{
         res.send("No connections with a device with such MACAddress was found.","Id:",address);
     }
