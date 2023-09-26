@@ -31,6 +31,7 @@ app.post("/postloc",(req,res,next)=>{
         ids[address]={
             id:id,
             address:address,
+            name:data.name,
             time:new Date(),
             connected:true,
             available:data["available"],
@@ -40,6 +41,7 @@ app.post("/postloc",(req,res,next)=>{
         id=ids[data["address"]]["id"];
         ids[address]["time"]=new Date();
         ids[address]["connected"]=true;
+        ids[address]["name"]=data["name"];
         ids[address]["available"]=data["available"];
     }
     next();
