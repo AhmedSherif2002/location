@@ -20,19 +20,6 @@ app.get("/",(req,res)=>{
     res.send("Done")
 })
 
-// app.get("/requestid",(req,res)=>{
-//     data = req.body;
-//     uniqueId = data.uni_id;
-//     console.log(data.uni_id);
-//     if(devices[uniqueId]){
-//         console.log("Available");
-//     }else{
-//         devices[uniqueId] = 1;
-//         console.log("Id generated");
-//     }
-//     res.status(200).send(req.status)
-// })
-
 id=0;
 counter=0;
 app.post("/postloc",(req,res,next)=>{
@@ -45,7 +32,8 @@ app.post("/postloc",(req,res,next)=>{
             id:id,
             address:address,
             time:new Date(),
-            connected:true
+            connected:true,
+            available:data["available"],
         };
         console.log("Welcome ",data.device);
     }else{
