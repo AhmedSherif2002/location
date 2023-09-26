@@ -40,6 +40,7 @@ app.post("/postloc",(req,res,next)=>{
         id=ids[data["address"]]["id"];
         ids[address]["time"]=new Date();
         ids[address]["connected"]=true;
+        ids[address]["available"]=data["available"];
     }
     next();
 },(req,res)=>{
